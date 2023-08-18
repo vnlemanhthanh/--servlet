@@ -1,3 +1,5 @@
+.sonarlint
+.metadata
 *.java.hsp
 *.sonarj
 *.sw*
