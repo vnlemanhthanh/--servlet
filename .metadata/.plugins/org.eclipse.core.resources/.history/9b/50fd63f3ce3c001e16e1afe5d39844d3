@@ -1,0 +1,11 @@
+
+
+<html>
+
+<body>
+
+Let's have some fun: <%= edu.vnlemanhthanh.jsp.makeItLower("FUN FUN FUN") %>
+
+</body>
+
+</html>

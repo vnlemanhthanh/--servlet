@@ -1,0 +1,11 @@
+<%@ page import="edu.vnlemanhthanh.*" %>
+
+<html>
+
+<body>
+
+Let's have some fun: <%= jsp.FunUtils.makeItLower("FUN FUN FUN") %>
+
+</body>
+
+</html>
