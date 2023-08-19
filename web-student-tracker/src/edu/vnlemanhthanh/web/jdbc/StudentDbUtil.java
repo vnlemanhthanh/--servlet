@@ -9,11 +9,11 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-public class StudentDBUtil {
+public class StudentDbUtil {
 
 	private DataSource dataSource;
 
-	public StudentDBUtil(DataSource theDataSource) {
+	public StudentDbUtil(DataSource theDataSource) {
 		dataSource = theDataSource;
 	}
 
