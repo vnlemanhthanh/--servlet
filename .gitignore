@@ -1,5 +1,6 @@
 .sonarlint
 .metadata
+RemoteSystemsTempFiles
 *.java.hsp
 *.sonarj
 *.sw*
