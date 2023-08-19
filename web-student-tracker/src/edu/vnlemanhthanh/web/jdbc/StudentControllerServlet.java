@@ -36,17 +36,53 @@ public class StudentControllerServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		try {
-			listStudent(request, response);
+			// read the "command" parameter
+			String theCommand = request.getParameter("command");
+
+			// if the command is missing, then default to listing students
+			if (theCommand == null) {
+				theCommand = "LIST";
+			}
+
+			// route to the appropriate method
+			switch (theCommand) {
+
+			case "LIST":
+				listStudents(request, response);
+				break;
+
+			case "ADD":
+				addStudent(request, response);
+				break;
+
+			default:
+				listStudents(request, response);
+			}
+
 		} catch (Exception exc) {
-			throw new ServletException();
+			throw new ServletException(exc);
 		}
 	}
 
-	private void listStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	private void addStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String email = request.getParameter("email");
+		
+		Student theStudent = new Student(firstName, lastName, email);
+		
+		studentDbUtil.addStudent(theStudent);
+		
+		listStudents(request, response);
+	}
+
+	private void listStudents(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<Student> students = studentDbUtil.getStudents();
 
 		request.setAttribute("STUDENT_LIST", students);
