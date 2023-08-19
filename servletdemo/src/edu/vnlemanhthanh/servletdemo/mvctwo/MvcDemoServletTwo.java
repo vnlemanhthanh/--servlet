@@ -13,14 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MvcServletTwo
  */
-@WebServlet("/MvcServletTwo")
-public class MvcServletTwo extends HttpServlet {
+@WebServlet("/MvcDemoServletTwo")
+public class MvcDemoServletTwo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MvcServletTwo() {
+    public MvcDemoServletTwo() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,9 +33,9 @@ public class MvcServletTwo extends HttpServlet {
 		
 		request.setAttribute("student_list", students);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("view_studetns_two.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view_students_two.jsp");
 		
-		
+		dispatcher.forward(request, response);
 	}
 
 	/**
