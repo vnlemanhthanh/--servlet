@@ -16,7 +16,7 @@
 <html>
 
 <body>
-	<table border="0.1">
+	<table border="1">
 
 	<tr>
 		<th>First Name</th>
