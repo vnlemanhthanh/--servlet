@@ -11,5 +11,7 @@ public class StudentDataUtil {
 		students.add(new Student("Mary", "Public", "mary@vnlemanhthanh.edu"));
 		students.add(new Student("John", "Doe", "john@vnlemanhthanh.edu"));
 		students.add(new Student("Ajay", "Rap", "ajay@vnlemanhthanh.edu"));
+	
+		return students;
 	}
 }
